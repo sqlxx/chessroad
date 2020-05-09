@@ -25,7 +25,10 @@ class BoardWidget extends StatelessWidget {
       child: CustomPaint(
         painter: BoardPainter(width: width),
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: Padding, horizontal: (width - Padding * 2) / 9 / 2 + Padding - WordsOnBoard.DigitsFontSize /2),
+          margin: EdgeInsets.symmetric(
+              vertical: Padding, 
+              horizontal: (width - Padding * 2) / 9 / 2 + Padding - WordsOnBoard.DigitsFontSize /2
+            ),
           child: WordsOnBoard()
         ),
       )
