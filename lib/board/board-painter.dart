@@ -2,17 +2,18 @@ import 'package:chessroad/board/board-widget.dart';
 import 'package:chessroad/common/color-consts.dart';
 import 'package:flutter/material.dart';
 
-class BoardPainter extends CustomPainter {
-  final double width, gridWidth, squareSize;
+import 'painter-base.dart';
+
+class BoardPainter extends PainterBase {
+  final double width;
   final thePaint = Paint();
 
-  BoardPainter({@required this.width}):
-    gridWidth = (width - BoardWidget.Padding * 2) * 8 / 9,
-    squareSize = (width - BoardWidget.Padding * 2) / 9;
+  BoardPainter({@required this.width}) : super(width: width);
     
   @override
   void paint(Canvas canvas, Size size) {
     doPaint(canvas, thePaint, gridWidth, squareSize, BoardWidget.Padding + squareSize/2, BoardWidget.Padding + BoardWidget.DigitsHeight + squareSize/2);
+    
   }
 
   @override
